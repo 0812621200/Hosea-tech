@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="copyright" content="© 2025 Your Name or Company. All rights reserved.">
+  <meta name="author" content="Hosea-Tech" />
+  <link rel="stylesheet"href="style.css">
+  <title>My Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: blueviolet;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      color: white;
+      padding: 1rem 2rem;
+    }
+
+    .nav-menu {
+      display: flex;
+      justify-content: flex-end;
+      flex: 1;
+    }
+
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      margin-left: 2rem;
+      cursor: pointer;
+    }
+
+    .nav-menu a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 2rem;
+      display: none; /* Hide all sections initially */
+    }
+
+    section.active {
+      display: block; /* Only show the active section */
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 2rem;
+    }
+    button{
+      background-color: aqua;
+      color: black;
+      border: 3;
+      height: 30px;
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+  <a href="page2.html"></a>
+  <header>
+    <h1>Hosea-Tech</h1>
+    <nav class="nav-menu">
+      <a data-target="menu"><button>Menu</button></a>
+      <a data-target="about"><button>About</button></a>
+      <a data-target="services"><button>services</button></a>
+      <a data-target="contact"><button>Contact</button></a>
+    </nav>
+  </header>
+
+  <section id="menu" class="active">
+    <h2>Home</h2>
+    <p>
+      At Hosea-tech, we believe technology should empower, simplify, and elevate your business. 
+      We are a dynamic tech company dedicated to providing innovative digital solutions that help businesses thrive in a fast-changing world.
+    </p>
+    <p>
+      From custom software development to smart automation and digital strategy, we deliver reliable, scalable, and forward-thinking tech services that align with your vision. 
+      Whether you're a startup or an established enterprise, Hosea-tech is your trusted partner in turning ideas into impactful results.
+    </p>
+    <p><strong>Let’s build the future—together.</strong></p>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Welcome to Hosea-tech – Your Gateway to Innovative Technology Solutions</p>
+    <p>At Hosea-tech, we are passionate about transforming ideas into impactful digital solutions...</p>
+    <p>Whether you're looking to build powerful web applications, develop intuitive mobile apps, streamline operations with automation, or enhance your digital presence, Hosea-tech is here to help.</p>
+    <p><strong>Why Choose Hosea-tech?</strong></p>
+    <ul>
+      <li>Innovative Solutions</li>
+      <li>Client-Centric Approach</li>
+      <li>Reliable Expertise</li>
+      <li>End-to-End Services</li>
+    </ul>
+    <p>Join us on a journey of innovation and growth. Discover what Hosea-tech can do for your business today.</p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Design website</li>
+      <li>Build website for your business</li>
+      <li>UX design</li>
+      <li>Blog pages</li>
+      <li>Portfolio</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <ul>
+      <li>hoseaiiping707com@gmail.com</li>
+      <li>+264812621200</li>
+      <li>Facebook</li>
+      <li>WhatsApp</li>
+    </ul>
+    <a href="page2.html"><button>Next</button></a>
+  </section>
+  
+  <script>
+    const links = document.querySelectorAll('.nav-menu a');
+    const sections = document.querySelectorAll('section');
+
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        const targetId = link.getAttribute('data-target');
+
+        sections.forEach(section => {
+          section.classList.remove('active');
+        });
+
+        document.getElementById(targetId).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
